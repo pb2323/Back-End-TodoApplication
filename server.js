@@ -4,8 +4,6 @@ let app=express();
 let dotenv=require("dotenv");
 dotenv.config();
 let session=require("express-session");
-let morgan=require("morgan");
-app.use(morgan("dev"));
 let hbs=require("hbs");
 let path=require("path");
 require("./db");
