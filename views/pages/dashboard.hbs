@@ -1,0 +1,18 @@
+{{#if length}}
+
+<h1>Your todos</h1>
+<ul>
+    {{#each todos}}
+    <li>{{this.title}}
+        <a href={{constructUpdate}}><button>Edit</button></a>
+        <form action={{constructDelete}} method="POST">
+            <button>Delete</button>
+        </form>
+    </li>
+    {{/each}}
+    <a href="/todo/create"><button>Create new todo</button></a>
+</ul>
+{{else}}
+<h1>Hey{{name}},you have no todos. Create one at<a href="/todo/create"><button>Create new todo</button></a></h1>
+
+{{/if}}
