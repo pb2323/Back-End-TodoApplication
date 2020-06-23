@@ -1,6 +1,6 @@
 "use strict";
 let mongoose=require("mongoose");
-mongoose.connect("mongodb://127.0.0.1:27017/NewTodo",{
+mongoose.connect(process.env.myUrl.replace("<password>",process.env.myPassword),{
     useNewUrlParser:true,
     useCreateIndex:true,
     useUnifiedTopology:true
@@ -9,5 +9,6 @@ mongoose.connect("mongodb://127.0.0.1:27017/NewTodo",{
     console.log("Database connected successfully");
 })
 .catch(function(err){
+    console.log("1234");
     console.log(err);
 });

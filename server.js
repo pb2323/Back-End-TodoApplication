@@ -1,6 +1,8 @@
 "use strict";
 let express=require("express");
 let app=express();
+let dotenv=require("dotenv");
+dotenv.config();
 let session=require("express-session");
 let morgan=require("morgan");
 app.use(morgan("dev"));
@@ -40,7 +42,8 @@ app.get("/", function(req, res) {
     title: "Home page",
     userId: req.session.userId
   });
-});  
-app.listen(1234,function(){
-    console.log("Server is listening");
+});
+var PORT=process.env.PORT||1234;
+app.listen(PORT,function(){
+    console.log("Server is listening ",PORT);
 });
